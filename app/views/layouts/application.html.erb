@@ -30,21 +30,25 @@
   </div>
   <nav>
       <ul>
+          <li><%= link_to "Home", root_path %></li>      
           <li><a href="#menu">Thực Đơn</a></li>
           <li><a href="#about">Giới Thiệu</a></li>
-          <li><a href="#events">Sự Kiện</a></li>
-          <li><a href="#contact">Liên Hệ</a></li>
+          
+          
+
+          <% if !user_signed_in? %>
+          <li><%= link_to "Login", new_user_session_path %></p></li>
+          <% end %>
+          <% if user_signed_in? %>
+          <li><%= link_to "Đăng xuất", destroy_user_session_path, method: :delete %></li>
+          <% end %>
+          
       </ul>
   </nav>
 </header>
 
-  <% if !user_signed_in? %>
-  <p class="sign_in"><%= link_to "Login", new_user_session_path %></p>
-  <% end %>
-  <% if user_signed_in? %>
-  <%= button_to "Đăng xuất", destroy_user_session_path, method: :delete %>
-  <% end %>
-  <%= link_to "Home", root_path %>
+  
+  
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= yield %>

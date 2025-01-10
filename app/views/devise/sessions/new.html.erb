@@ -1,25 +1,25 @@
-<h2 class="login-title">Log in</h2>
+<h2 class="dang-nhap-title">Đăng Nhập</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'login-form' }) do |f| %>
-  <div class="login-form-group">
-    <%= f.label :email, class: 'login-form-label' %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'login-form-control' %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'dang-nhap-form' }) do |f| %>
+  <div class="dang-nhap-form-group">
+    <%= f.label :email, class: 'dang-nhap-form-label' %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'dang-nhap-form-control' %>
   </div>
 
-  <div class="login-form-group">
-    <%= f.label :password, class: 'login-form-label' %>
-    <%= f.password_field :password, autocomplete: "current-password", class: 'login-form-control' %>
+  <div class="dang-nhap-form-group">
+    <%= f.label :password, class: 'dang-nhap-form-label' %>
+    <%= f.password_field :password, autocomplete: "current-password", class: 'dang-nhap-form-control' %>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="login-form-group remember-me">
+    <div class="dang-nhap-form-group remember-me">
       <%= f.check_box :remember_me, class: 'checkbox' %>
-      <%= f.label :remember_me, class: 'login-form-label' %>
+      <%= f.label :remember_me, class: 'dang-nhap-form-label' %>
     </div>
   <% end %>
 
-  <div class="login-form-actions">
-    <%= f.submit "Log in", class: 'login-btn' %>
+  <div class="dang-nhap-form-actions">
+    <%= f.submit "Đăng Nhập", class: 'dang-nhap-btn' %>
   </div>
 <% end %>
 
