@@ -38,7 +38,7 @@
           <li><%= link_to "Login", new_user_session_path %></p></li>
           <% end %>
           <% if user_signed_in? %>
-          <li><%= link_to "Đăng xuất", destroy_user_session_path, method: :delete %></li>
+          <li><%= button_to "Đăng xuất", destroy_user_session_path, method: :delete %></li>
           <% end %>
           
       </ul>
